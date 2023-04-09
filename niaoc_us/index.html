@@ -183,7 +183,8 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
     // do something with the data
     //data = data["results"]
     alert(data["settings"]["location"]["city"])
-  table = "<caption>"+data["settings"]["location"]["city"]+" "+data["settings"]["location"]["state"]+"</caption>\
+  table = "<table id='prayer_time' class='table table-bordered table-sm'>\
+    <caption>"+data["settings"]["location"]["city"]+" "+data["settings"]["location"]["state"]+"</caption>\
   <tbody>\
     <tr>\
       <td>Fajr</td>\
@@ -191,27 +192,27 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
     </tr>\
     <tr>\
       <td>Duha</td>\
-      <td>"+data["results"]["Duha"]+"</td>\
+      <td>"+data["results"]["Duha"].replace(/[0-9]+%\s?/g, '')+"</td>\
     </tr>\
     <tr>\
       <td>Dhuhr</td>\
-      <td>"+data["results"]["Dhuhr"]+"</td>\
+      <td>"+data["results"]["Dhuhr"].replace(/[0-9]+%\s?/g, '')+"</td>\
     </tr>\
     <tr>\
       <td>Asr</td>\
-      <td>"+data["results"]["Asr"]+"</td>\
+      <td>"+data["results"]["Asr"].replace(/[0-9]+%\s?/g, '')]+"</td>\
     </tr>\
     <tr>\
       <td>Maghrib</td>\
-      <td>"+data["results"]["Maghrib"]+"</td>\
+      <td>"+data["results"]["Maghrib"].replace(/[0-9]+%\s?/g, '')+"</td>\
     </tr>\
     <tr>\
       <td>Isha</td>\
-      <td>"+data["results"]["Isha"]+"</td>\
+      <td>"+data["results"]["Isha"].replace(/[0-9]+%\s?/g, '')+"</td>\
     </tr>\
-  </tbody>"
+  </tbody>\
+</table>"
 
-alert(table)
 document.getElementById("prayer_time").innerHTML = table
 
   })
@@ -228,7 +229,7 @@ document.getElementById("prayer_time").innerHTML = table
  </div>
 
  <div class="col-sm-4" style="padding:10px;">
-  <table id='prayer_time' class='table table-bordered table-sm'></table>
+  <div id='prayer_time'></div>
  </div>
 
 </div>
