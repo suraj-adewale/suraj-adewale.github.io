@@ -181,7 +181,7 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
   .then(response => response.json())
   .then(data => {
     // do something with the data
-    data = data["results"]
+    //data = data["results"]
     alert(data["settings"]["location"]["city"])
   table = "<p></p>\
       <caption>"+data["settings"]["location"]["city"]+" "+data["settings"]["location"]["state"]+"</caption>\
@@ -190,27 +190,27 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
   <tbody>\
     <tr>\
       <td>Fajr</td>\
-      <td>"+data["Fajr"]+"</td>\
+      <td>"+data["results"]["Fajr"]+"</td>\
     </tr>\
     <tr>\
       <td>Duha</td>\
-      <td>"+data["Duha"]+"</td>\
+      <td>"+data["results"]["Duha"]+"</td>\
     </tr>\
     <tr>\
       <td>Dhuhr</td>\
-      <td>"+data["Dhuhr"]+"</td>\
+      <td>"+data["results"]["Dhuhr"]+"</td>\
     </tr>\
     <tr>\
       <td>Asr</td>\
-      <td>"+data["Asr"]+"</td>\
+      <td>"+data["results"]["Asr"]+"</td>\
     </tr>\
     <tr>\
       <td>Maghrib</td>\
-      <td>"+data["Maghrib"]+"</td>\
+      <td>"+data["results"]["Maghrib"]+"</td>\
     </tr>\
     <tr>\
       <td>Isha</td>\
-      <td>"+data["Isha"]+"</td>\
+      <td>"+data["results"]["Isha"]+"</td>\
     </tr>\
   </tbody>"
 
