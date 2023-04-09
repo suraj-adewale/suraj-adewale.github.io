@@ -173,11 +173,26 @@
 </div>
 
 <br>
+<script>
+
+  //{"results":{"Fajr":"5:14 %am%","Duha":"6:31 %am%","Dhuhr":"1:01 %pm%","Asr":"4:40 %pm%","Maghrib":"7:31 %pm%","Isha":"8:48 %pm%"},"settings":{"name":"Default Settings","location":{"city":"Aurora","state":"Colorado","country":"United States"},"latitude":"39.69480000","longitude":"-104.78810000","timezone":"America\/Denver","method":3,"juristic":0,"high_latitude":1,"fajir_rule":{"type":0,"value":15},"maghrib_rule":{"type":1,"value":0},"isha_rule":{"type":0,"value":15},"time_format":1},"success":true}
+
+fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&country=US")
+  .then(response => response.json())
+  .then(data => {
+    // do something with the data
+    alert(data)
+  })
+  .catch(error => {
+    console.error("Error: " + error);
+  });
+</script>
+
 <div class="container">
     
   <div class="row">
-   <div class="col-sm-8" style="padding:10px;">
-    <img class="fables-logo" src="assets/img/Ramadan-2023-Wishes.jpeg" alt="Mosque logo" width="500" height="600"/>
+   <div class="col-sm-8" style="padding:5px;">
+    <img class="fables-logo" src="assets/img/Ramadan-2023-Wishes.jpeg" alt="Mosque logo" width="800" height="600"/>
  </div>
 
  <div class="col-sm-4" style="padding:10px;">
