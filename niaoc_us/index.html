@@ -184,14 +184,7 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
     //data = data["results"]
  
         
-  table = "<div class='card bg-primary text-white'>\
-      <div class='card-body'>\
-        Date and time\
-      </div></div>\
-    <div class='card bg-primary text-white'>\
-      <div class='card-body'>"+data["settings"]["location"]["city"]+" "+data["settings"]["location"]["state"]+"</div>\
-    </div></div>\
-  <table id='prayer_time' class='table table-bordered table-sm' style='text-align:center;'>\
+  table = "<table id='prayer_time' class='table table-bordered table-sm' style='text-align:center;'>\
   <tbody>\
     <tr>\
       <td>Fajr</td>\
@@ -211,7 +204,7 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
     </tr>\
     <tr>\
       <td>Maghrib</td>\
-      <td>"+data["results"]["Maghrib"]+"</td>\
+      <td>"+data["results"]["Maghrib"].replace(/\d+% ?/g, "")+"</td>\
     </tr>\
     <tr>\
       <td>Isha</td>\
@@ -236,6 +229,7 @@ document.getElementById("prayer_time").innerHTML = table
  </div>
 
  <div class="col-sm-4" style="padding:10px;">
+  <div></div>
   <div id='prayer_time'></div>
  </div>
 
