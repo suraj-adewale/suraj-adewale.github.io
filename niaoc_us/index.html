@@ -224,7 +224,7 @@ year = d.getFullYear()
 document.getElementById("date").innerHTML = week[day]+", "+ months[month]+ " "+ date+", "+year  
 document.getElementById("location").innerHTML = data["settings"]["location"]["city"]+ " "+ data["settings"]["location"]["state"]
 document.getElementById("prayer_time").innerHTML = table
-alert( data["settings"]["location"]["city"]+ " "+ data["settings"]["location"]["state"])
+
 
   })
   .catch(error => {
@@ -241,15 +241,15 @@ alert( data["settings"]["location"]["city"]+ " "+ data["settings"]["location"]["
 
  <div class="col-sm-4" style="padding:10px;">
     <div class="card bg-light text-white">
-      <div id="location" class="card-body" style='text-align:center;'></div>
+      <div id="location" class="card-body" style='text-align:center;color: black; font-size: large;'></div>
   </div>
   <div class="card bg-secondary text-white">
-    <div id="date" class="card-body" style='text-align:center;'></div>
+    <div id="date" class="card-body" style='text-align:center;color: black; font-size: large;'></div>
   </div>
-  <div id='prayer_time'></div>
-  <div class="card bg-light text-white">
+  <div id='prayer_time' style="padding: 0px;"></div>
+  <div class="card bg-light text-white" style="padding: 0px;">
     <div id="date" class="card-body" style='text-align:center;'>
-      <p>Powered by:</p><br><a href="https://www.islamicfinder.org/" style="color: rgb(0, 229, 255); text-decoration: none; font-weight: bold;">www.islamicfinder.org</a>
+      <h3 style="color: black; font-size: large;">Powered by:</h3><br><a href="https://www.islamicfinder.org/" style="color: rgb(0, 229, 255); text-decoration: none; font-weight: bold;">www.islamicfinder.org</a>
     </div>
   </div>
  </div>
