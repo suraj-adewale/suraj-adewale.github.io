@@ -212,7 +212,16 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
     </tr>\
   </tbody>\
 </table>"
-document.getElementById("date").innerHTML = "table"
+week = ["Sunday", "Monday","Tuesday","Wednesday", "Thursday","Friday","Saturday"]
+months =['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+d = new Date()
+date = d.getDate();
+day = d.getDay()
+month = d.getMonth()
+year = getFullYear()
+
+document.getElementById("date").innerHTML = week[day]+", "+ months[month]+ " "+ date+", "+year  
 document.getElementById("location").innerHTML = data["settings"]["location"]["city"]+ " "+ data["settings"]["location"]["state"]
 document.getElementById("prayer_time").innerHTML = table
 
@@ -222,7 +231,7 @@ document.getElementById("prayer_time").innerHTML = table
   });
 </script>
 
-<div class="container">
+<div class="container" style="background-color: white;">
     
   <div class="row">
    <div class="col-sm-8" style="padding:5px;">
@@ -230,11 +239,11 @@ document.getElementById("prayer_time").innerHTML = table
  </div>
 
  <div class="col-sm-4" style="padding:10px;">
-    <div class="card sm-light text-white">
+    <div class="card bg-light text-white">
       <div id="location" class="card-body" style='text-align:center;'>
       </div>
   </div>
-  <div class="card sm-secondary text-white">
+  <div class="card bg-secondary text-white">
     <div id="date" class="card-body" style='text-align:center;'>
     </div>
 </div>
