@@ -184,23 +184,23 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
     //data = data["results"]
   table = "<div>Date time</div>\
   <div>"+data["settings"]["location"]["city"]+" "+data["settings"]["location"]["state"]+"</div>\
-  <table id='prayer_time' class='table table-bordered table-sm'>\
+  <table id='prayer_time' class='table table-bordered table-sm' style='text-align:center;'>\
   <tbody>\
     <tr>\
       <td>Fajr</td>\
-      <td>"+data["results"]["Fajr"]+"</td>\
+      <td>"+data["results"]["Fajr"].replace("%", '')+"</td>\
     </tr>\
     <tr>\
       <td>Duha</td>\
-      <td>"+data["results"]["Duha"]+"</td>\
+      <td>"+data["results"]["Duha"].replace("%", '')+"</td>\
     </tr>\
     <tr>\
       <td>Dhuhr</td>\
-      <td>"+data["results"]["Dhuhr"]+"</td>\
+      <td>"+data["results"]["Dhuhr"].replace("%", '')+"</td>\
     </tr>\
     <tr>\
       <td>Asr</td>\
-      <td>"+data["results"]["Asr"]+"</td>\
+      <td>"+data["results"]["Asr"].replace("%", '')+"</td>\
     </tr>\
     <tr>\
       <td>Maghrib</td>\
@@ -208,7 +208,7 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
     </tr>\
     <tr>\
       <td>Isha</td>\
-      <td>"+data["results"]["Isha"]+"</td>\
+      <td>"+data["results"]["Isha"].replace("%", '')+"</td>\
     </tr>\
   </tbody>\
 </table>"
