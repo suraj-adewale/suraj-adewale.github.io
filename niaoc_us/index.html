@@ -204,7 +204,7 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
     </tr>\
     <tr>\
       <td>Maghrib</td>\
-      <td>"+data["results"]["Maghrib"].replace(/\d+% ?/g, "")+"</td>\
+      <td>"+(data["results"]["Maghrib"]).replace(/\d+% ?/g, "")+"</td>\
     </tr>\
     <tr>\
       <td>Isha</td>\
