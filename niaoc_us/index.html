@@ -184,7 +184,7 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
     //data = data["results"]
  
         
-  table = "<table class='table table-bordered table-sm' style='text-align:center;'>\
+  table = "<table class='table table-bordered table-sm' style='text-align:center;padding: 0px'>\
   <tbody>\
     <tr>\
       <td>Fajr</td>\
@@ -248,8 +248,8 @@ document.getElementById("prayer_time").innerHTML = table
   </div>
   <div id='prayer_time' style="padding: 0px;"></div>
   <div class="card bg-light text-white" style="padding: 0px;">
-    <div id="date" class="card-body" style='text-align:center;'>
-      
+    <div class="card-body" style='text-align:center;'>
+      <h3 style="color: hsl(0, 3%, 15%); font-size: large;padding: 0px;">Powered by:</h3><br><a href="https://www.islamicfinder.org/" style="color: rgb(0, 229, 255); text-decoration: none; font-weight: bold;">www.islamicfinder.org</a>
     </div>
   </div>
  </div>
