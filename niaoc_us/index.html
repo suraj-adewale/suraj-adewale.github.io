@@ -143,8 +143,8 @@
         
     </div>
     <div class="col-sm-4" style="padding:10px;">
-        <div class="card bg-primary text-white">
-    <div class="card-body">
+     <div class="card bg-primary text-white">
+        <div class="card-body">
         <h2>Make Donations </h2> 
 
            <p><i class='fas fa-hand-holding-usd' style='font-size:48px;'></i>Whoever builds a Masjid for the sake of Allah, Allah will build for him a house in Jannah.</p>
@@ -154,7 +154,7 @@
     </div>
   </div>
         
-    </div>
+  </div>
     <div class="col-sm-4" style="padding:10px;">
         <div class="card bg-info text-white">
     <div class="card-body">
@@ -182,8 +182,15 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
   .then(data => {
     // do something with the data
     //data = data["results"]
-  table = "<div>Date time</div>\
-  <div>"+data["settings"]["location"]["city"]+" "+data["settings"]["location"]["state"]+"</div>\
+ 
+        
+  table = "<div class='card bg-primary text-white'>\
+      <div class='card-body'>\
+        Date and time\
+      </div></div>\
+    <div class='card bg-primary text-white'>\
+      <div class='card-body'>"+data["settings"]["location"]["city"]+" "+data["settings"]["location"]["state"]+"</div>\
+    </div></div>\
   <table id='prayer_time' class='table table-bordered table-sm' style='text-align:center;'>\
   <tbody>\
     <tr>\
