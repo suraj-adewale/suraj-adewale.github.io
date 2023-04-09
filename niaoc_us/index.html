@@ -182,6 +182,24 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
   .then(data => {
     // do something with the data
     resp = data["results"]["Fajr"]
+    alert(resp)
+    "<table class='table table-bordered table-sm'>\
+    <thead>\
+    <tr>\
+      <th>Firstname</th>\
+      <th>Lastname</th>\
+      <th>Email</th>\
+    </tr>\
+  </thead>\
+  <tbody>\
+    <tr>\
+      <td>John</td>\
+      <td>Doe</td>\
+      <td>john@example.com</td>\
+    </tr>\
+  </tbody>\
+</table>"
+
   })
   .catch(error => {
     console.error("Error: " + error);
@@ -202,22 +220,6 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
 
 </div>
 </div>
-
-<table class="table table-bordered table-sm">
-  <thead>
-    <tr>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Email</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>John</td>
-      <td>Doe</td>
-      <td>john@example.com</td>
-    </tr>
-    <tr>
 
 <div class="fables-testimonial fables-after-overlay bg-rules py-4 py-lg-5">
     <div class="container">
