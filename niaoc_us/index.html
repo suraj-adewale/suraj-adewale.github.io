@@ -129,7 +129,7 @@
     
    <div class="row">
     <div class="col-sm-4" style="padding:10px;">
-       <div class="card bg-success text-white">
+    <div class="card bg-success text-white">
     <div class="card-body">
         
         <h2>Missions</h2> 
@@ -184,7 +184,7 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
     //data = data["results"]
  
         
-  table = "<table id='prayer_time' class='table table-bordered table-sm' style='text-align:center;'>\
+  table = "<table class='table table-bordered table-sm' style='text-align:center;'>\
   <tbody>\
     <tr>\
       <td>Fajr</td>\
@@ -212,7 +212,8 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
     </tr>\
   </tbody>\
 </table>"
-
+document.getElementById("date").innerHTML = "table"
+document.getElementById("location").innerHTML = data["settings"]["location"]["city"]+ " "+ data["settings"]["location"]["state"]
 document.getElementById("prayer_time").innerHTML = table
 
   })
@@ -229,7 +230,14 @@ document.getElementById("prayer_time").innerHTML = table
  </div>
 
  <div class="col-sm-4" style="padding:10px;">
-  <div></div>
+    <div class="card bg-success text-white">
+      <div id="location" class="card-body">
+      </div>
+  </div>
+  <div class="card bg-success text-white">
+    <div id="date" class="card-body">
+    </div>
+</div>
   <div id='prayer_time'></div>
  </div>
 
