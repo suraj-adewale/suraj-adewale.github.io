@@ -182,9 +182,9 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
   .then(data => {
     // do something with the data
     data = data["results"]
-    alert(data["location"]["city"])
+    alert(data["settings"]["location"]["city"])
   table = "<p></p>\
-      <caption>"+data["location"]["city"]+" "+data["location"]["state"]+"</caption>\
+      <caption>"+data["settings"]["location"]["city"]+" "+data["settings"]["location"]["state"]+"</caption>\
     <thead>\
   </thead>\
   <tbody>\
