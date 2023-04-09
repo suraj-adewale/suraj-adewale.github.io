@@ -181,24 +181,40 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
   .then(response => response.json())
   .then(data => {
     // do something with the data
-    resp = data["results"]["Fajr"]
-    alert(resp)
-    "<table class='table table-bordered table-sm'>\
+    data = data["results"]
+  table = "<p></p>\
+      <caption>"+data["location"]["city"]+" "+data["location"]["state"]+"</caption>\
     <thead>\
-    <tr>\
-      <th>Firstname</th>\
-      <th>Lastname</th>\
-      <th>Email</th>\
-    </tr>\
   </thead>\
   <tbody>\
     <tr>\
-      <td>John</td>\
-      <td>Doe</td>\
-      <td>john@example.com</td>\
+      <td>Fajr</td>\
+      <td>"+data["Fajr"]+"</td>\
+    </tr>\
+    <tr>\
+      <td>Duha</td>\
+      <td>"+data["Duha"]+"</td>\
+    </tr>\
+    <tr>\
+      <td>Dhuhr</td>\
+      <td>"+data["Dhuhr"]+"</td>\
+    </tr>\
+    <tr>\
+      <td>Asr</td>\
+      <td>"+data["Asr"]+"</td>\
+    </tr>\
+    <tr>\
+      <td>Maghrib</td>\
+      <td>"+data["Maghrib"]+"</td>\
+    </tr>\
+    <tr>\
+      <td>Isha</td>\
+      <td>"+data["Isha"]+"</td>\
     </tr>\
   </tbody>\
-</table>"
+</table>";
+
+document.getElementById("prayer_time").innerHTML = table
 
   })
   .catch(error => {
@@ -214,8 +230,7 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
  </div>
 
  <div class="col-sm-4" style="padding:10px;">
-  <img class="fables-logo" src="assets/img/Ramadan-2023-Wishes.jpeg" alt="Mosque logo" width="500" height="600"/>
-   
+  <table id='prayer_time' class='table table-bordered table-sm'></table>
  </div>
 
 </div>
