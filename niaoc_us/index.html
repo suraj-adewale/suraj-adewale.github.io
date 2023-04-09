@@ -182,6 +182,7 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
   .then(data => {
     // do something with the data
     data = data["results"]
+    alert(data)
   table = "<p></p>\
       <caption>"+data["location"]["city"]+" "+data["location"]["state"]+"</caption>\
     <thead>\
@@ -211,8 +212,8 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
       <td>Isha</td>\
       <td>"+data["Isha"]+"</td>\
     </tr>\
-  </tbody>\
-</table>";
+  </tbody>"
+
 alert(table)
 document.getElementById("prayer_time").innerHTML = table
 
