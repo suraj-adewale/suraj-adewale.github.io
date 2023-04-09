@@ -181,7 +181,7 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
   .then(response => response.json())
   .then(data => {
     // do something with the data
-    alert(data)
+    resp = data["results"]["Fajr"]
   })
   .catch(error => {
     console.error("Error: " + error);
@@ -203,6 +203,21 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
 </div>
 </div>
 
+<table class="table table-bordered table-sm">
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>John</td>
+      <td>Doe</td>
+      <td>john@example.com</td>
+    </tr>
+    <tr>
 
 <div class="fables-testimonial fables-after-overlay bg-rules py-4 py-lg-5">
     <div class="container">
