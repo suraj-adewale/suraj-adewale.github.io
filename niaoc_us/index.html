@@ -182,7 +182,7 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
   .then(data => {
     // do something with the data
     data = data["results"]
-    alert(data)
+    alert(data["location"]["city"])
   table = "<p></p>\
       <caption>"+data["location"]["city"]+" "+data["location"]["state"]+"</caption>\
     <thead>\
@@ -348,7 +348,7 @@ document.getElementById("prayer_time").innerHTML = table
         <li> </li>
         <li> </li>
     </ul>
-    <p class="mb-0">Copyright © Dominion and Shalom LLC World Travels 2018. All rights reserved.</p>
+    <p class="mb-0">Copyright ©  2023. All rights reserved.</p>
 </div>
 <!-- /End Footer 2 Background Image -->
 <p> </p>
