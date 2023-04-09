@@ -212,7 +212,7 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
     </tr>\
   </tbody>\
 </table>"
-week = ["Sunday", "Monday","Tuesday","Wednesday", "Thursday","Friday","Saturday"]
+week = ["Sunday", "Monday","Tuesday","Wednesday", "Thursday","Friday", "Saturday"]
 months =['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 d = new Date()
@@ -221,8 +221,8 @@ day = d.getDay()
 month = d.getMonth()
 year = getFullYear()
 
-document.getElementById("date").innerHTML = week[day]+", "+ months[month]+ " "+ date+", "+year  
-document.getElementById("location").innerHTML = data["settings"]["location"]["city"]+ " "+ data["settings"]["location"]["state"]
+//document.getElementById("date").innerHTML = week[day]+", "+ months[month]+ " "+ date+", "+year  
+//document.getElementById("location").innerHTML = data["settings"]["location"]["city"]+ " "+ data["settings"]["location"]["state"]
 document.getElementById("prayer_time").innerHTML = table
 
   })
