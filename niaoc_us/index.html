@@ -183,10 +183,7 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
     // do something with the data
     //data = data["results"]
     alert(data["settings"]["location"]["city"])
-  table = "<p></p>\
-      <caption>"+data["settings"]["location"]["city"]+" "+data["settings"]["location"]["state"]+"</caption>\
-    <thead>\
-  </thead>\
+  table = "<caption>"+data["settings"]["location"]["city"]+" "+data["settings"]["location"]["state"]+"</caption>\
   <tbody>\
     <tr>\
       <td>Fajr</td>\
