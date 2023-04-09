@@ -188,27 +188,27 @@ fetch("https://www.islamicfinder.us/index.php/api/prayer_times?zipcode=80017&cou
   <tbody>\
     <tr>\
       <td>Fajr</td>\
-      <td>"+data["results"]["Fajr"].replace("%", '')+"</td>\
+      <td>"+data["results"]["Fajr"].replace(/%/g, '')+"</td>\
     </tr>\
     <tr>\
       <td>Duha</td>\
-      <td>"+data["results"]["Duha"].replace("%", '')+"</td>\
+      <td>"+data["results"]["Duha"].replace(/%/g, '')+"</td>\
     </tr>\
     <tr>\
       <td>Dhuhr</td>\
-      <td>"+data["results"]["Dhuhr"].replace("%", '')+"</td>\
+      <td>"+data["results"]["Dhuhr"].replace(/%/g, '')+"</td>\
     </tr>\
     <tr>\
       <td>Asr</td>\
-      <td>"+data["results"]["Asr"].replace("%", '')+"</td>\
+      <td>"+data["results"]["Asr"].replace(/%/g, '')+"</td>\
     </tr>\
     <tr>\
       <td>Maghrib</td>\
-      <td>"+(data["results"]["Maghrib"]).replace(/\d+% ?/g, "")+"</td>\
+      <td>"+(data["results"]["Maghrib"]).replace(/%/g, '')+"</td>\
     </tr>\
     <tr>\
       <td>Isha</td>\
-      <td>"+data["results"]["Isha"].replace("%", '')+"</td>\
+      <td>"+data["results"]["Isha"].replace(/%/g, '')+"</td>\
     </tr>\
   </tbody>\
 </table>"
@@ -230,12 +230,12 @@ document.getElementById("prayer_time").innerHTML = table
  </div>
 
  <div class="col-sm-4" style="padding:10px;">
-    <div class="card bg-success text-white">
-      <div id="location" class="card-body">
+    <div class="card sm-light text-white">
+      <div id="location" class="card-body" style='text-align:center;'>
       </div>
   </div>
-  <div class="card bg-success text-white">
-    <div id="date" class="card-body">
+  <div class="card sm-secondary text-white">
+    <div id="date" class="card-body" style='text-align:center;'>
     </div>
 </div>
   <div id='prayer_time'></div>
