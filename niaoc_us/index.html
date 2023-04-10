@@ -46,6 +46,21 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
         
+  <style>
+        /* Default style for all screen sizes */
+    .responsive-image {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Style for screens smaller than 600px */
+    @media (max-width: 600px) {
+      .responsive-image {
+        max-width: 90%;
+      }
+    }
+
+  </style>
 </head>
         
 </head>
@@ -108,15 +123,13 @@
                 <h1 class="white-color bold-font mt-lg-5 mb-4">Nigeria Islamic Association, Colorado US (NIAOC US) <br /><span class="fables-second-text-color"></span></h1>
                 <p class="fables-third-text-color mt-3 mb-5 light-font fables-header-slider-details">
                   Welcome to Nigeria Islamic Colorado Of Association! We are a unique center striving to serve the needs of a growing and diverse Muslim community here in Aurora and its environs. We offer a fun and functional blend of community and prayer center facilities(Asalat). Insha’Allah you will stop by to learn or play and stay to pray.
-                  Explore this site to find out about our many programs, learn about local businesses, check out our rental space for special events, register for an education class, ask a question and so much more. Insha’Allah we’ll see you soon.</p>
+                  Explore this site to find out about Missions, learn about our Programs, check out our rental space for special events, ask a question and so much more. Insha’Allah we’ll see you soon.</p>
                 
                 <!-- Flash message -->
                 <p class="fables-third-text-color mt-3 mb-5 light-font fables-header-slider-details">
                 </p>
   
                
-
-
                 <a class="btn fables-second-background-color fables-second-border-color white-color rounded-0 mr-4 px-md-4 py-2 btn-bg-hover white-color-hover" href="services.html">Our Services</a> <a class="btn fables-second-border-color white-color rounded-0 px-md-4 py-2 fables-second-hover-background-color" href="contactus.html">Contact Us</a>
             </div>
         </div>
@@ -240,7 +253,7 @@ document.getElementById("prayer_time").innerHTML = table
     
   <div class="row">
    <div class="col-sm-8" style="padding:5px;">
-    <img class="fables-logo" src="assets/img/Ramadan-2023-Wishes.jpeg" style="max-width: 100%; height: auto;" alt="Ramadan Greeting"/>
+    <img class="fables-logo" src="assets/img/Ramadan-2023-Wishes.jpeg" class="responsive-image" alt="Ramadan Greeting"/>
  </div>
 
  <div class="col-sm-4" style="padding:10px;">
