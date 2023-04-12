@@ -48,17 +48,11 @@
         
   <style>
         /* Default style for all screen sizes */
-    .responsive-image {
-      max-width: 100%;
-      height: auto;
-    }
-
-    /* Style for screens smaller than 600px */
-    @media (max-width: 600px) {
-      .responsive-image {
-        max-width: 90%;
+        .image-container img {
+        width: 100%;
+        height: auto;
+        display: block;
       }
-    }
 
   </style>
 </head>
@@ -253,7 +247,9 @@ document.getElementById("prayer_time").innerHTML = table
   
   <div class="row">
    <div class="col-sm-8" style="padding:5px;">
-    <img class="fables-logo" src="assets/img/messages-greetings.jpeg" height= "auto" max-width= "600" alt="Ramadan Greeting"/>
+    <div class="image-container">
+    <img  src="assets/img/messages-greetings.jpeg" />
+    </div>
  </div>
 
  <div class="col-sm-4" style="padding:10px;">
