@@ -443,7 +443,7 @@ button.donate_btn {
 .box_main {
     width: 100%;
     background-color: #120a78;
-    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 75%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 85%);
     height: auto;
     padding: 10px;
 }
