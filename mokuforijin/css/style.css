@@ -468,14 +468,14 @@ button.donate_btn {
     margin: 0 auto;
     font-size: 16px;
     color: #fff;
-    text-align: center;
+    text-align: justify;
 }
 
 .join_bt {
     width: 170px;
     margin: 0 auto;
-    text-align: justify;
-    margin-top: 10px;
+    text-align: center;
+    margin: 10px;
 }
 
 .join_bt a {
