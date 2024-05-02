@@ -425,7 +425,7 @@ button.donate_btn {
 }
 
 .send_bt a:hover {
-    background-color: #f64646;
+    background-color:  #3ea04f;
 }
 
 .fundraise_section_main {
@@ -488,7 +488,7 @@ button.donate_btn {
 }
 
 .box_main:hover {
-    background-color: #46b859;
+    background-color: #3ea04f;
 }
 
 .box_main.active {
