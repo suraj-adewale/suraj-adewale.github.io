@@ -464,7 +464,7 @@ button.donate_btn {
 }
 
 .lorem_text {
-    width: 70%;
+    width: 90%;
     margin: 0 auto;
     font-size: 16px;
     color: #fff;
@@ -474,8 +474,8 @@ button.donate_btn {
 .join_bt {
     width: 170px;
     margin: 0 auto;
-    text-align: center;
-    margin-top: 20px;
+    text-align: justify;
+    margin-top: 10px;
 }
 
 .join_bt a {
