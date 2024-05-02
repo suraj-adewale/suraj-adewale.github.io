@@ -445,7 +445,7 @@ button.donate_btn {
     background-color: #120a78;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 85%);
     height: auto;
-    padding: 10px;
+    padding: 5px;
 }
 
 .icon_1 {
