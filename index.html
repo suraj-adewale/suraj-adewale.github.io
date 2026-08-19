@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suraju A. Sadeeq — Computational Genomics &amp; Statistical Machine Learning</title>
+<meta name="description" content="Suraju A. Sadeeq is a computational biologist and statistician working in computational genomics, statistical genetics, and machine learning at biobank scale. Ph.D. expected December 2026, University of Colorado Anschutz Medical Campus.">
+<meta name="author" content="Suraju A. Sadeeq">
+<meta property="og:title" content="Suraju A. Sadeeq — Computational Genomics &amp; Statistical Machine Learning">
+<meta property="og:description" content="Computational genomics, statistical methods, and machine learning at biobank scale. First author of PONG 2.0 (Human Molecular Genetics, 2026).">
+<meta property="og:type" content="profile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0C1A24;
+  --ink-soft:#3A4E5A;
+  --ink-faint:#6E828E;
+  --paper:#EDF1F2;
+  --card:#FFFFFF;
+  --rule:#D3DCDF;
+  --teal:#0F6E66;
+  --amber:#B07A0C;
+  --coral:#B44536;
+  --violet:#54487F;
+  --maxw:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:2rem}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;
+}
+a{color:var(--teal);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:2px}
+
+/* ---------- locus strip: the signature element ---------- */
+.locus{display:flex;height:9px;width:100%;border-radius:2px;overflow:hidden;gap:2px}
+.locus span{flex:1;transform-origin:left;animation:grow .5s cubic-bezier(.2,.7,.3,1) backwards}
+.locus span:nth-child(1){background:var(--teal);animation-delay:.05s}
+.locus span:nth-child(2){background:var(--amber);animation-delay:.11s;flex:.55}
+.locus span:nth-child(3){background:var(--coral);animation-delay:.17s;flex:1.4}
+.locus span:nth-child(4){background:var(--violet);animation-delay:.23s;flex:.8}
+.locus span:nth-child(5){background:var(--teal);animation-delay:.29s;flex:1.15;opacity:.55}
+.locus span:nth-child(6){background:var(--amber);animation-delay:.35s;flex:.7;opacity:.6}
+.locus span:nth-child(7){background:var(--coral);animation-delay:.41s;flex:.95;opacity:.5}
+@keyframes grow{from{transform:scaleX(0);opacity:0}to{transform:scaleX(1);opacity:1}}
+
+/* ---------- layout ---------- */
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem)}
+.shell{display:grid;grid-template-columns:300px 1fr;gap:clamp(2rem,5vw,4.5rem);padding-top:clamp(2rem,6vw,4rem);padding-bottom:5rem}
+
+/* ---------- sidebar ---------- */
+.side{position:sticky;top:2.5rem;align-self:start}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+.avatar{
+  width:112px;height:112px;border-radius:50%;display:grid;place-items:center;
+  background:var(--ink);color:#fff;font-family:"Newsreader",serif;font-size:2.4rem;
+  letter-spacing:.02em;margin-bottom:1.15rem;overflow:hidden;
+}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.side h1{font-family:"Newsreader",serif;font-weight:500;font-size:1.85rem;line-height:1.16;margin:0 0 .4rem}
+.side .role{color:var(--ink-soft);font-size:.94rem;line-height:1.45;margin:0 0 .2rem}
+.side .org{font-size:.88rem;color:var(--ink-faint);margin:0 0 1.25rem}
+.links{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.5rem;padding:0;list-style:none}
+.links a{
+  display:inline-block;font-size:.78rem;padding:.32rem .62rem;border:1px solid var(--rule);
+  border-radius:100px;color:var(--ink-soft);background:var(--card);transition:.16s;
+}
+.links a:hover{border-color:var(--teal);color:var(--teal);text-decoration:none}
+nav ul{list-style:none;margin:1.35rem 0 0;padding:0;border-left:1px solid var(--rule)}
+nav a{display:block;padding:.34rem 0 .34rem .9rem;font-size:.86rem;color:var(--ink-soft);margin-left:-1px;border-left:2px solid transparent}
+nav a:hover,nav a.on{color:var(--ink);border-left-color:var(--coral);text-decoration:none}
+
+/* ---------- sections ---------- */
+section{margin-bottom:3.4rem;scroll-margin-top:2rem}
+.head{display:flex;align-items:baseline;gap:.85rem;margin-bottom:1.15rem}
+.head h2{font-family:"Newsreader",serif;font-weight:500;font-size:1.5rem;margin:0;letter-spacing:-.01em}
+.head .bar{flex:1;height:1px;background:var(--rule)}
+.lede{font-family:"Newsreader",serif;font-size:1.28rem;line-height:1.55;color:var(--ink);margin:0 0 1rem}
+p{margin:0 0 1rem;color:var(--ink-soft);max-width:62ch}
+
+/* ---------- interests ---------- */
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;padding:0;list-style:none;margin:1.2rem 0 0}
+.tags li{font-size:.82rem;padding:.28rem .68rem;background:var(--card);border:1px solid var(--rule);border-radius:3px;color:var(--ink-soft)}
+
+/* ---------- publications ---------- */
+.pubs{list-style:none;margin:0;padding:0}
+.pub{background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--rule);border-radius:3px;padding:1rem 1.15rem;margin-bottom:.7rem;transition:.16s}
+.pub:hover{border-left-color:var(--coral)}
+.pub.first{border-left-color:var(--coral)}
+.pub h3{font-family:"Newsreader",serif;font-weight:500;font-size:1.08rem;line-height:1.35;margin:0 0 .35rem}
+.pub h3 a{color:var(--ink)}
+.pub .authors{font-size:.85rem;color:var(--ink-soft);margin:0 0 .3rem}
+.pub .authors b{color:var(--ink);font-weight:600}
+.pub .venue{font-size:.82rem;color:var(--ink-faint);margin:0}
+.pub .venue em{font-style:italic;color:var(--ink-soft)}
+.badge{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);border:1px solid currentColor;border-radius:2px;padding:.05rem .34rem;margin-left:.4rem;vertical-align:2px}
+
+/* ---------- projects ---------- */
+.projs{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));list-style:none;margin:0;padding:0}
+.proj{background:var(--card);border:1px solid var(--rule);border-radius:3px;padding:1rem 1.1rem;display:flex;flex-direction:column;transition:.16s}
+.proj:hover{border-color:var(--ink-faint)}
+.proj h3{font-size:1rem;font-weight:600;margin:0 0 .1rem}
+.proj h3 a{color:var(--ink)}
+.proj .kind{font-family:"IBM Plex Mono",monospace;font-size:.63rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 .5rem}
+.proj p{font-size:.9rem;margin:0 0 .75rem}
+.stack{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:auto;padding:0;list-style:none}
+.stack li{font-family:"IBM Plex Mono",monospace;font-size:.66rem;color:var(--ink-faint);border:1px solid var(--rule);border-radius:2px;padding:.1rem .38rem}
+
+/* ---------- timeline ---------- */
+.tl{list-style:none;margin:0;padding:0 0 0 1.5rem;border-left:1px solid var(--rule)}
+.tl li{position:relative;padding-bottom:1.7rem}
+.tl li:last-child{padding-bottom:0}
+.tl li::before{content:"";position:absolute;left:calc(-1.5rem - 4px);top:.55rem;width:7px;height:7px;border-radius:50%;background:var(--paper);border:1.5px solid var(--ink-faint)}
+.tl li.now::before{background:var(--coral);border-color:var(--coral)}
+.tl h3{font-size:1rem;font-weight:600;margin:0 0 .12rem}
+.tl .where{font-size:.88rem;color:var(--ink-soft);margin:0 0 .1rem}
+.tl .when{margin:0 0 .5rem}
+.tl p:last-child{margin-bottom:0}
+.tl ul{margin:.4rem 0 0;padding-left:1.1rem;color:var(--ink-soft);font-size:.92rem}
+.tl ul li{padding-bottom:.2rem}
+.tl ul li::before{display:none}
+
+/* ---------- skills ---------- */
+.skills{display:grid;gap:1rem}
+.skill h3{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 .4rem;font-weight:500}
+.skill p{margin:0;font-size:.94rem}
+
+footer{border-top:1px solid var(--rule);padding:1.6rem 0 3rem;font-size:.83rem;color:var(--ink-faint)}
+footer a{color:var(--ink-faint)}
+
+@media (max-width:860px){
+  .shell{grid-template-columns:1fr;gap:2.25rem}
+  .side{position:static}
+  nav{display:none}
+  .avatar{width:88px;height:88px;font-size:1.9rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div style="padding-top:2rem">
+    <div class="locus" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  </div>
+
+  <div class="shell">
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="side">
+      <!-- Photo: currently pulls your GitHub avatar. To use your own file instead,
+           put avatar.jpg in this repo and change src to "avatar.jpg" -->
+      <div class="avatar"><img src="https://avatars.githubusercontent.com/u/33229310?v=4" alt="Suraju A. Sadeeq"></div>
+      <h1>Suraju A. Sadeeq</h1>
+      <p class="role">Computational Genomics · Statistical &amp; Machine Learning Methods</p>
+      <p class="org">Doctoral Researcher · Ph.D. expected Dec 2026<br>University of Colorado Anschutz Medical Campus</p>
+
+      <ul class="links">
+        <li><a href="mailto:suraju.sadeeq@cuanschutz.edu">Email</a></li>
+        <li><a href="https://scholar.google.com/citations?user=UoKiIugAAAAJ">Scholar</a></li>
+        <li><a href="https://orcid.org/0000-0001-9944-571X">ORCID</a></li>
+        <li><a href="https://github.com/suraj-adewale">GitHub</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+
+      <nav aria-label="Sections">
+        <p class="mono" style="margin:0 0 .3rem">Contents</p>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#talks">Talks &amp; Service</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- ============ MAIN ============ -->
+    <main>
+
+      <section id="about">
+        <p class="lede">I build computational and statistical methods for human genomics — and I care that they work for the populations genomics has left out.</p>
+        <p>My doctoral research investigates how polymorphic natural killer cell receptors shape multiple sclerosis. The KIR genes are among the most variable in the genome and their structural complexity has kept them out of reach of genome-wide studies; I wrote <a href="https://doi.org/10.1093/hmg/ddag075">PONG 2.0</a> to recover KIR alleles from the SNP data biobanks already hold.</p>
+        <p>I trained first as a statistician (B.Sc., M.Sc.) and taught probability and statistics for six years in Nigeria.</p>
+        <ul class="tags">
+          <li>Computational genomics</li><li>Computational biology</li><li>Statistical genetics</li>
+          <li>Machine learning</li><li>Statistical modeling</li><li>Genotype imputation</li>
+          <li>High-dimensional data</li><li>Immunogenetics</li><li>Multi-ancestry genomics</li>
+          <li>Open-source scientific software</li>
+        </ul>
+      </section>
+
+      <section id="publications">
+        <div class="head"><h2>Publications</h2><div class="bar"></div></div>
+        <ul class="pubs">
+
+          <li class="pub first">
+            <h3><a href="https://doi.org/10.1093/hmg/ddag075">PONG 2.0: allele imputation for the killer cell immunoglobulin-like receptors</a><span class="badge">First author</span></h3>
+            <p class="authors"><b>Sadeeq SA</b>, Leaton LA, Kichula KM, Farias TDJ, Font-Porterias N, Pollock NR, the Colorado Center for Personalized Medicine, Collora CE, Castelli EC, Gignoux CR, Norman PJ</p>
+            <p class="venue"><em>Human Molecular Genetics</em> · 2026 · 35(17):ddag075 · <a href="https://doi.org/10.1093/hmg/ddag075">doi:10.1093/hmg/ddag075</a></p>
+          </li>
+
+          <li class="pub">
+            <h3><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11601405/">Uncovering hidden gene–trait patterns through biclustering analysis of the UK Biobank</a></h3>
+            <p class="authors">Pividori M, <b>Sadeeq S</b>, Krishnan A, Stranger BE, Gignoux C</p>
+            <p class="venue">bioRxiv · 2024 · 2024.11.08.622657 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11601405/">PMC11601405</a></p>
+          </li>
+
+          <li class="pub">
+            <h3>Archaic HLA class I receptor modulates natural killer cell driven immunity throughout Oceania</h3>
+            <p class="authors">Loh L, Saunders PM, Faoro C, et al. (incl. <b>Sadeeq S</b>)</p>
+            <p class="venue"><em>Cell</em> · 2024</p>
+          </li>
+
+          <li class="pub">
+            <h3><a href="https://doi.org/10.1093/bioinformatics/btac791">SysBiolPGWAS: simplifying post-GWAS analysis through the use of computational technologies and integration of diverse omics datasets</a></h3>
+            <p class="authors">Falola O, Adam Y, Ajayi O, et al. (incl. <b>Sadeeq S</b>)</p>
+            <p class="venue"><em>Bioinformatics</em> · 2023 · 39(1):btac791 · <a href="https://doi.org/10.1093/bioinformatics/btac791">doi:10.1093/bioinformatics/btac791</a></p>
+          </li>
+
+          <li class="pub">
+            <h3><a href="https://doi.org/10.12688/f1000research.76218.2">Polygenic risk score in African populations: progress and challenges</a></h3>
+            <p class="authors">Adam Y, <b>Sadeeq S</b>, Kumuthini J, et al.</p>
+            <p class="venue"><em>F1000Research</em> · 2023 · 11:175 · <a href="https://doi.org/10.12688/f1000research.76218.2">doi:10.12688/f1000research.76218.2</a></p>
+          </li>
+
+          <li class="pub">
+            <h3><a href="https://doi.org/10.1155/2021/1843671">A review of evolutionary trends in cloud computing and applications to the healthcare ecosystem</a></h3>
+            <p class="authors">Molo MJ, Badejo JA, Adetiba E, et al. (incl. <b>Sadeeq S</b>)</p>
+            <p class="venue"><em>Applied Computational Intelligence and Soft Computing</em> · 2021 · <a href="https://doi.org/10.1155/2021/1843671">doi:10.1155/2021/1843671</a></p>
+          </li>
+
+        </ul>
+        <p style="margin-top:1rem;font-size:.9rem">Full list on <a href="https://scholar.google.com/citations?user=UoKiIugAAAAJ">Google Scholar</a>.</p>
+      </section>
+
+      <section id="projects">
+        <div class="head"><h2>Projects</h2><div class="bar"></div></div>
+        <ul class="projs">
+
+          <li class="proj">
+            <h3><a href="https://github.com/NormanLabUCD/PONG2">PONG 2.0</a></h3>
+            <p class="kind">Research software · 2026</p>
+            <p>Imputes high-resolution KIR genotypes from SNP-array data using pre-trained multi-ancestry models. 92–99% accuracy, validated against targeted sequencing. Open source, GPL-3.0.</p>
+            <ul class="stack"><li>R</li><li>C++ / Rcpp</li><li>Shell</li><li>PLINK2</li></ul>
+          </li>
+
+          <li class="proj">
+            <h3><a href="https://spgwas.waslitbre.org">SysBiolPGWAS</a></h3>
+            <p class="kind">Research platform · 2020–2021</p>
+            <p>Deployed platform for post-GWAS analysis across diverse omics datasets: annotation, imputation, eQTL colocalization, TWAS. Serves the African genomics community.</p>
+            <ul class="stack"><li>TypeScript</li><li>Python</li><li>Shell</li></ul>
+          </li>
+
+          <li class="proj">
+            <h3><a href="https://pivlab.github.io/biclustering-twas-manuscript/">Biclustering TWAS</a></h3>
+            <p class="kind">Research code · contributor</p>
+            <p>Biclustering of transcriptome-wide association results from PhenomeXcan, grouping genes and traits together to surface overlapping patterns that global clustering misses.</p>
+            <ul class="stack"><li>Python</li><li>Jupyter</li><li>pytask</li><li>conda-lock</li><li>TWAS</li></ul>
+          </li>
+
+          <li class="proj">
+            <h3><a href="https://github.com/suraj-adewale/sc_bulk_ood/tree/suraj">Pseudobulk simulation for deconvolution</a></h3>
+            <p class="kind">Research code · 2023</p>
+            <p>Preprocessing and pseudobulk simulation pipelines supporting evaluation of BuDDI, a variational autoencoder for bulk RNA-seq deconvolution. NNLS residual analysis to find missing cell types.</p>
+            <ul class="stack"><li>Python</li><li>scanpy</li><li>scikit-learn</li><li>SciPy</li><li>HPC</li></ul>
+          </li>
+
+          <li class="proj">
+            <h3><a href="https://github.com/suraj-adewale/SmartAccount">SmartAccount</a></h3>
+            <p class="kind">Desktop application · 2021</p>
+            <p>Double-entry accounting system for a bursary department: invoicing, ledgers, trial balance, financial statements, payables and receivables, on a relational backend.</p>
+            <ul class="stack"><li>Python</li><li>PyQt5</li><li>SQL</li><li>JavaScript</li></ul>
+          </li>
+
+          <li class="proj">
+            <h3><a href="https://github.com/suraj-adewale/computer-base-test">Computer-Based Test Platform</a></h3>
+            <p class="kind">Desktop application · 2021</p>
+            <p>Examination system with a candidate client for timed exams and an admin application for monitoring sessions in real time.</p>
+            <ul class="stack"><li>Python</li><li>PyQt5</li><li>SQL</li><li>JavaScript</li></ul>
+          </li>
+
+        </ul>
+      </section>
+
+      <section id="experience">
+        <div class="head"><h2>Experience</h2><div class="bar"></div></div>
+        <ul class="tl">
+
+          <li class="now">
+            <h3>Graduate Research Assistant — Computational Genomics</h3>
+            <p class="where">Norman Lab, Department of Biomedical Informatics — University of Colorado Anschutz</p>
+            <p class="when mono">August 2022 – Present</p>
+            <p>Lead investigator on the role of polymorphic KIR in multiple sclerosis.</p>
+            <ul>
+              <li>Wrote PONG 2.0 — an R package with C++ acceleration. 92–99% accuracy across five ancestry groups, validated in 267 independent samples, benchmarked in over 8,000 individuals.</li>
+              <li>Modelled gene–environment interactions on polygenic risk scores in REGARDS (30,239 participants, multi-ancestry).</li>
+              <li>Built simulation pipelines to evaluate deep generative models for RNA-seq deconvolution.</li>
+              <li>Mentor PATH-GDS and PATH-GREU scholars.</li>
+            </ul>
+          </li>
+
+          <li>
+            <h3>Teaching Assistant</h3>
+            <p class="where">Office of Research Education — University of Colorado Anschutz</p>
+            <p class="when mono">March 2024 – June 2024</p>
+            <p>Instructional materials, coursework assessment, and review sessions for graduate students.</p>
+          </li>
+
+          <li>
+            <h3>Research Assistant</h3>
+            <p class="where">Covenant Applied Informatics and Communication Africa Centre of Excellence (CApIC-ACE), Nigeria</p>
+            <p class="when mono">January 2020 – September 2021</p>
+            <ul>
+              <li>Co-developed SysBiolPGWAS, an open-source post-GWAS platform for the African genomics community.</li>
+              <li>Python and Bash pipelines for fine-mapping, polygenic risk scoring, and downstream GWAS analysis.</li>
+              <li>Led weekly lab meetings; contributed to grant writing.</li>
+            </ul>
+          </li>
+
+          <li>
+            <h3>Lecturer, Computer Science</h3>
+            <p class="where">Federal College of Agriculture Akure, Nigeria</p>
+            <p class="when mono">September 2016 – August 2022</p>
+            <ul>
+              <li>Taught probability and statistics, and advanced engineering mathematics.</li>
+              <li>Led a three-person team building the institution's web application and results software.</li>
+              <li>Supervised undergraduate research projects.</li>
+            </ul>
+          </li>
+
+        </ul>
+      </section>
+
+      <section id="education">
+        <div class="head"><h2>Education</h2><div class="bar"></div></div>
+        <ul class="tl">
+          <li class="now">
+            <h3>Ph.D., Human Medical Genetics and Genomics</h3>
+            <p class="where">University of Colorado Anschutz Medical Campus</p>
+            <p class="when mono">Expected December 2026</p>
+            <p>Mentors: Dr. Paul Norman and Dr. Christopher Gignoux.</p>
+          </li>
+          <li>
+            <h3>M.Sc., Statistics</h3>
+            <p class="where">University of Ilorin, Nigeria</p>
+            
+          </li>
+          <li>
+            <h3>B.Sc., Statistics</h3>
+            <p class="where">University of Ilorin, Nigeria</p>
+            
+          </li>
+        </ul>
+      </section>
+
+      <section id="skills">
+        <div class="head"><h2>Skills</h2><div class="bar"></div></div>
+        <div class="skills">
+          <div class="skill">
+            <h3>Statistical methods</h3>
+            <p>Regression and interaction modelling · Bayesian inference · time-series forecasting · Monte Carlo simulation · bootstrap and permutation testing</p>
+          </div>
+          <div class="skill">
+            <h3>Machine learning</h3>
+            <p>Supervised prediction and ensemble methods · cross-validation and benchmarking · clustering, matrix factorization, biclustering · evaluation of deep generative and language models</p>
+          </div>
+          <div class="skill">
+            <h3>Computational genomics</h3>
+            <p>KIR and HLA imputation · GWAS and fine-mapping · polygenic scoring · population genetics across multi-ancestry cohorts · RNA-seq deconvolution</p>
+          </div>
+          <div class="skill">
+            <h3>Computing &amp; infrastructure</h3>
+            <p>Python · R · C++ via Rcpp · SQL · Bash · PLINK2 · Snakemake · Git · SLURM/HPC</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="talks">
+        <div class="head"><h2>Talks &amp; Service</h2><div class="bar"></div></div>
+        <ul class="tl">
+          <li><h3>Conference presentations</h3><p>ASHI, Orlando (2025) · European Federation for Immunogenetics, Prague (2025) · KIR Polymorphism Workshop, Colorado (2025) · ASHG, Denver (2024) · Computational Genomics Summer Institute, UCLA (2024)</p></li>
+          <li><h3>Peer review</h3><p>American Society for Histocompatibility and Immunogenetics (2025) · University of Denver RaCAS (2025)</p></li>
+          <li><h3>Mentoring</h3><p>Clear Direction Mentoring — career development for STEM professionals.</p></li>
+          <li><h3>Memberships</h3><p>ASHG · British Society for Immunology · Society for Immune Polymorphism · ACTRIMS · H3Africa</p></li>
+        </ul>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    <div class="locus" style="margin-bottom:1.4rem;opacity:.5" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    © <span id="yr">2026</span> Suraju A. Sadeeq · Aurora, Colorado · <a href="mailto:suraju.sadeeq@cuanschutz.edu">suraju.sadeeq@cuanschutz.edu</a>
+  </footer>
+</div>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+const links = [...document.querySelectorAll('nav a')];
+const secs = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+const obs = new IntersectionObserver(es => {
+  es.forEach(e => {
+    if (e.isIntersecting) {
+      links.forEach(l => l.classList.toggle('on', l.getAttribute('href') === '#' + e.target.id));
+    }
+  });
+}, {rootMargin: '-10% 0px -75% 0px'});
+secs.forEach(s => obs.observe(s));
+</script>
+</body>
+</html>
